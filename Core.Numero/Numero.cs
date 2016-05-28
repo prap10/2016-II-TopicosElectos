@@ -18,5 +18,18 @@ namespace Core.Numero
         public double elNumeroEnDecimal { get {
                 return double.Parse(elNumero); } }
 
+        public Numero(string elNumero, int laBase)
+        {
+            var validacionBase = new Dominio.Validaciones.ValidarBase();
+            var validacionNumero = new Dominio.Validaciones.ValidarNumero();
+
+            if (validacionBase.laBaseEstaEnElIntervaloCorrecto(laBase)
+                & validacionNumero.elNumeroEsValidoEnLaBase(elNumero, laBase))
+            {
+                this.elNumero = elNumero;
+                this.laBase = laBase;
+            }
+        }
+
     }
 }
