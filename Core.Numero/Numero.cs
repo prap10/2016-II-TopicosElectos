@@ -13,11 +13,10 @@ namespace Core.Numero
 
         public bool esBaseDiez { get {
                 return laBase == 10; }
-            }
+             }
 
         public double elNumeroEnDecimal { get {
-                return double.Parse(elNumero); }
-            }
+                return double.Parse(elNumero); } }
 
     }
 }
